@@ -1,0 +1,5 @@
+
+<%= form_for(:image, :url => {:action => 'create'},     :html => {:multipart => true}) do |f| %>
+<%= f.file_field :blob %>
+<%= f.submit "Upload" %>
+<% end %>
