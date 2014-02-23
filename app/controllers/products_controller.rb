@@ -5,11 +5,8 @@ class ProductsController < ApplicationController
 		# binding.pry
 	end
 
-	def create
-		puts '****** Success ********'
-		# binding.pry
-		# puts params[:product]		
-		@product = Product.new(params[:image])
+	def create	
+		@product = Product.new(params[:product])
 		# # @product.productblob.build
 
 		if @product.save
@@ -29,8 +26,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
-		content = @product.blob.read
-		send_data content, type: @product.blob.file.content_type, disposition: "inline"
+		#content = @product.blob.read
 	end
 
 	def serve
