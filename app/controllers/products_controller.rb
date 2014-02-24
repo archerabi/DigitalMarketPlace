@@ -1,5 +1,7 @@
 
 class ProductsController < ApplicationController
+	before_filter :authenticate_user!
+
 	def new
 		puts "********"
 		# binding.pry
@@ -7,8 +9,7 @@ class ProductsController < ApplicationController
 
 	def create	
 		@product = Product.new(params[:product])
-		# # @product.productblob.build
-
+		@product.user_id = current_user.id
 		if @product.save
 			puts '****** Success ********'
 			redirect_to @product

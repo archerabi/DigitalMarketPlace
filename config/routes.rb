@@ -1,11 +1,13 @@
 DigitalMarketplace::Application.routes.draw do
+  devise_for :users
+
   get "home/index"
   # resources :products
   # match "/images/uploads/*path" => "gridfs#serve"
   resources :products do
     get :blob, on: :member
   end
-  
+  root to: "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
