@@ -48,3 +48,4 @@ end
 gem 'carrierwave', :git => "git://github.com/jnicklas/carrierwave.git"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'devise'
+gem 'unicorn'
