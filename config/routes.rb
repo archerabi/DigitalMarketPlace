@@ -8,6 +8,7 @@ DigitalMarketplace::Application.routes.draw do
     get :blob, on: :member
   end
   root to: "home#index"
+  get '/products/:id/download', to: 'products#download', as: 'product_download'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

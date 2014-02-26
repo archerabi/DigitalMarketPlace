@@ -30,6 +30,13 @@ class ProductsController < ApplicationController
 		#content = @product.blob.read
 	end
 
+	def download
+		@product = Product.find(params[:id])
+		content = @product.blob.read
+		filename = Pathname.new(@product.blob.inspect).basename.to_s
+		send_data content, filename: filename
+	end
+
 	def serve
 		gridfs_path = env["PATH_INFO"].gsub("/images/", "")
 		begin
