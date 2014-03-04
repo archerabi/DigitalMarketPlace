@@ -91,7 +91,7 @@ require 'json'
 		end
 
 		def refresh_token
-			@token.refresh!	
+			@token = @token.refresh!	
 			save_tokens
 		end
 

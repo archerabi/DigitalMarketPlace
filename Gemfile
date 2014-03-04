@@ -44,6 +44,7 @@ group :development do
   gem 'rails_layout'
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-debugger'
 end
 gem 'carrierwave', :git => "git://github.com/jnicklas/carrierwave.git"
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
