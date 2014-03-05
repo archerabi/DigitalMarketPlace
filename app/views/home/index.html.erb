@@ -39,7 +39,7 @@
   
   	<!-- if no products -->
 	<% if @products.nil? or @products.empty? %>
-		<p> No Products uploaded yet!</p>
+		<p> Nothing for sale yet!</p>
 
 	<!-- else products uploaded -->
 	<% else %>
@@ -48,15 +48,116 @@
 		There are <%= @products.size %> products uploaded:
 		</p>
 	
+
+  <div class="preloader">
+    Purchasing...
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+    
 		<% @products.each do |x| %>
-			<%= link_to "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" do %>
-				<div class = "row">
-					<%=  x.name %>
-					<%=  x.price %>
-					BTC
-				</div>
-			<% end %><!-- end link -->
+		
+      <div class="swiper-slide red-slide">
+        <div class="title">
+        	<%=  x.name %>
+        	<%=  x.price %>
+						BTC	
+        </div>
+				<div>			
+					<%= link_to "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" do %>
+						BUY
+					<% end %><!-- end link -->
+				</div>			
+      </div>
+			
 		<% end %><!-- end each -->
+
+
+    </div>
+  </div>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/idangerous.swiper-2.1.min.js"></script>
+  <script>
+  var purchaseHoldFingerPosition = 0;
+  var loadMoreHoldFingerPosition = 0;
+  var mySwiper = new Swiper('.swiper-container',{
+    slidesPerView:'1',
+    watchActiveIndex: true,
+    onSlideChangeStart: function(){
+    	//alert('slide changed: ' + mySwiper.activeIndex );
+
+			// If this is the last slide, don't remove it. Let pull to load more trigger.
+			if ( 0 == mySwiper.activeIndex ) {
+				return;
+			}
+
+			// Otherwise remove any previous slides.
+			for(var i = 0; i < mySwiper.activeIndex; i++) {
+	    	mySwiper.removeSlide(i);			
+			}
+    	
+    	// Adjust index so we stay on the new slide we just swiped to.
+    	mySwiper.swipeTo(0, 0, false);
+    },
+    onTouchStart: function() {
+      purchaseHoldFingerPosition = 0;
+      loadMoreHoldFingerPosition = 0;
+    },
+    onResistanceBefore: function(s, pos){
+      purchaseHoldFingerPosition = pos;
+    },
+    onResistanceAfter: function(s, pos){
+      loadMoreHoldFingerPosition = pos;
+    },
+    onTouchEnd: function(){
+    
+      if (purchaseHoldFingerPosition>100) {
+        // Hold Swiper in required position
+        mySwiper.setWrapperTranslate(0,100,0)
+
+        //Dissalow futher interactions
+        mySwiper.params.onlyExternal=true
+
+        //Show loader
+        $('.preloader').addClass('visible');
+
+
+				var activeSlide = mySwiper.activeSlide();
+
+				var activeSlideBuyHref = $(activeSlide).find('a').attr('href');
+
+        purchase(activeSlideBuyHref);
+      }
+      
+      if (loadMoreHoldFingerPosition>100) {
+      	//TODO: load more
+      	alert(' Nothing more for sale. Try back later! ');
+      }
+      
+    }
+  })
+  function purchase(activeSlideBuyHref) {
+
+    setTimeout(function(){
+
+      //Release interactions and set wrapper
+      mySwiper.setWrapperTranslate(0,0,0)
+      mySwiper.params.onlyExternal=false;
+
+
+      //Hide loader
+      $('.preloader').removeClass('visible')
+      
+      //alert('TODO go to purchase screen for: ' + title);
+      
+      window.location.href = activeSlideBuyHref;
+      
+    },1000)
+
+
+  }
+  </script>
+  
 
 
 	<!-- end else no products uploaded -->
