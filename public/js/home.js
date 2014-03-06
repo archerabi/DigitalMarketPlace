@@ -57,3 +57,26 @@
       
     }
   });
+
+  $('.buy-button').on('click', function(e){
+    e.preventDefault()
+
+		// Navigate to buy link.
+		var activeSlide = mySwiper.activeSlide();
+		var activeSlideBuyHref = $(activeSlide).find('a').attr('href');
+    window.location.href = activeSlideBuyHref;
+
+  });
+  
+  $('.next-button').on('click', function(e){
+    e.preventDefault();
+        
+    mySwiper.swipeTo(1, 1000, false);
+    setTimeout(function() {
+	    mySwiper.removeSlide(0);	
+			mySwiper.swipeTo(0, 0, false);    
+    }, 1001);
+
+  });
+  
+  
