@@ -25,14 +25,38 @@
     },
     onResistanceBefore: function(s, pos){
       purchaseHoldFingerPosition = pos;
+      
+      var activeSlide = mySwiper.activeSlide();
+      if ( !$(activeSlide).hasClass('stampedApproved') ) {
+      		$(activeSlide).addClass('stampedApproved');
+      }
+      
     },
     onResistanceAfter: function(s, pos){
-      loadMoreHoldFingerPosition = pos;
+      loadMoreHoldFingerPosition = pos;      
+    },
+    onTouchMove: function() {    	
+    	//if ( mySwiper.touches.diff < 0 ) {
+	      //var activeSlide = mySwiper.activeSlide();
+	      //if ( !$(activeSlide).hasClass('stampedNo') ) {
+ 	     	//	$(activeSlide).addClass('stampedNo');
+  	    //}	
+    	//}
+    },
+    onSlideReset: function() {
+    	var activeSlide = mySwiper.activeSlide();
+      $(activeSlide).removeClass('stampedApproved');
+      $(activeSlide).removeClass('stampedNo');    	
     },
     onTouchEnd: function(){
     
+    	var activeSlide = mySwiper.activeSlide();
+    	
     	// If user swiped right past cards and held.
       if (purchaseHoldFingerPosition>100) {
+      
+      	$(activeSlide).removeClass('stampedApproved');
+      
         // Hold Swiper in required position
         mySwiper.setWrapperTranslate(0,100,0)
 

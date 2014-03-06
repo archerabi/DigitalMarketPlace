@@ -77,3 +77,18 @@ body {
   font-style: italic;
   font-size: 42px;
 }
+
+.stampedApproved {
+	background-image:url('../img/approved-stamp.png');
+	background-repeat:no-repeat;
+	background-position:left center;
+}
+
+.stampedNo {
+	background-image:url('../img/no-stamp.png');
+	background-repeat:no-repeat;
+	background-position:right center;
+}
+
+
+
