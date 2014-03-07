@@ -1,106 +1,140 @@
-
-
-<!-- TODO: flip animation on buy like http://codepen.io/beyondSimple/pen/gwEpd ? -->
-
-<!-- TODO: connect load more hook into loading more items from server (pagination) -->
-
-<!-- TODO: connect buy hook into triggering coinbase purchase -->
-
-<!-- TODO: while holding item, show overlay indicating holding longer without cancel will buy. e.g.:
-http://smotko.si/tinder-css/
--->
-
-<!-- TODO remember user's last location for when come back? 
-					or seen items in localstorage? or last seen timestamp? -->
-
-
 <!-- if logged in -->
 <% if user_signed_in? %>
 
-	<!-- if no products by this user -->
-	<% if current_user.products.nil? or current_user.products.empty? %>
-		<p> No Products </p>
+    <body class="dashboardpage">
 
-	<!-- else products by this user -->
-	<% else %>
-		You have <%= current_user.products.size %> products.
-		<% current_user.products.each do |x| %>
-			<%= link_to x do %>
-				<div class = "row">
-					<%=  x.name %>
-					<%=  x.price %>
-					BTC
-				</div>
-			<% end %><!-- end link -->
-		<% end %><!-- end each -->
+    <%= render 'layouts/navigation' %>
 
-	<!-- end else products by this user -->
-	<% end %>
+    <div class="content">
 
+      <div class="sectionheader">
 
-	<div>
-		<a href='/products/new'> Add Product </a>
-	</div>
-	<% if connect_to_coinbase_visible? %>
-		<div >
-			<%= link_to "Connect Coinbase Account", link_to_coinbase_auth %>
-		</div>
-	<% end %>
-	
-	
-<!-- else not logged in -->	
+        <div class="rightside" onclick="window.location = '/products/new' ">
+          <div class="button" style="width: 100%">
+            &nbsp;&nbsp;CREATE&nbsp;NEW&nbsp;LISTING&nbsp;&nbsp;
+          </div>
+        </div>
+
+        <h2 class="leftside">CURRENT LISTINGS</h2>
+
+        <br class="clearing"/>
+      </div>
+
+      <!-- TODO style -->
+      <% if connect_to_coinbase_visible? %>
+          <div class="section">
+            <%= link_to "Connect Coinbase Account", link_to_coinbase_auth %>
+          </div>
+      <% end %>
+
+      <div class="section">
+
+        <div class="padder" onclick="window.location = 'productlisting.html' ">
+          <table>
+
+            <!-- if no products by this user -->
+            <% if current_user.products.nil? or current_user.products.empty? %>
+                <tr>
+                  <th> No products for sale. Add one!</th>
+                </tr>
+
+                <!-- else products by this user -->
+            <% else %>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Unit Price</th>
+                  <!-- TODO
+                  <th>Sold</th>
+                  <th>Total Sales</th>
+                  -->
+                </tr>
+                <% current_user.products.each do |x| %>
+                    <tr>
+                      <td>
+                        <%= link_to x do %>
+                            <%= x.name %>
+                        <% end %> <!-- end link -->
+                      </td>
+                      <td>BTC <%= x.price %></td>
+
+                      <!--
+                      <td>893</td>
+                      <td>BTC 1.3395</td>
+                      -->
+                    </tr>
+                <% end %> <!-- end each -->
+            <% end %> <!-- end else products by this user -->
+
+          </table>
+        </div>
+
+        <div class="clearing"></div>
+
+      </div>
+
+    </div>
+
+    </body>
+
+    <!-- else not logged in -->
 <% else %>
-  <p>The easiest way to sell your digital goods.</p>
-  
-  	<!-- if no products -->
-	<% if @products.nil? or @products.empty? %>
-		<p> Nothing for sale yet!</p>
 
-	<!-- else products uploaded -->
-	<% else %>
-	
-		<p>
-		There are <%= @products.size %> products uploaded:
-		</p>
-		
-		
-    <a class="next-button" href="#">Next</a> 
-    
-    <a class="buy-button" href="#">Buy</a>
-	
-		<div class="preloader">
-			Purchasing...
-		</div>
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-		
-			<% @products.each do |x| %>
-		
-				<div class="swiper-slide red-slide">
-					<div class="title">
-						<%=  x.name %>
-						<%=  x.price %>
-							BTC	
-					</div>
-					<div>			
-						<%= link_to "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" do %>
-							BUY
-						<% end %><!-- end link -->
-					</div>			
-				</div>
-			
-			<% end %><!-- end each -->
+    <body class="productlistingpage">
+
+    <%= render 'layouts/navigation' %>
+
+    <div class="content">
+
+      <!-- if no products -->
+      <% if @products.nil? or @products.empty? %>
+
+          <div class="section">
+            <p> Nothing for sale yet!</p>
+          </div>
+
+      <% else %> <!-- else products uploaded -->
 
 
-			</div>
-		</div>
-		<script src="js/jquery-1.10.1.min.js"></script>
-		<script src="js/idangerous.swiper-2.1.min.js"></script>
-		<script src="js/home.js"></script>
+          <% @products.each do |x| %>
 
-	<!-- end else no products uploaded -->
-	<% end %>
+              <div class="section">
+                <img src="/images/product.png" width="100%"/>
+
+                <div class="thinpadder">
+                  <div class="leftimage pricelabel">BTC</div>
+                  <h3 class="leftimage price"><%= x.price %></h3>
+
+                  <div class="rightimage" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
+                    <div class="button">
+                      &nbsp;&nbsp;BUY&nbsp;NOW&nbsp;&nbsp;
+                    </div>
+                  </div>
+                  <div class="clearing"></div>
+
+                  <h4>
+                    <%= x.name %>
+                  </h4>
+
+                  <div>
+                    <%= x.description %>
+                  </div>
+                  <br/>
+                </div>
+
+              </div><!-- end section -->
 
 
-<!-- end else not logged in -->
+          <% end %><!-- end each -->
+
+
+          <!-- end else no products uploaded -->
+      <% end %>
+
+
+    </div>
+    <!-- end content -->
+
+    </body>
+
+    <!-- end else not logged in -->
 <% end %>

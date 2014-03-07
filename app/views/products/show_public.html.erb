@@ -1,32 +1,64 @@
 <script>
-	function createOrder(product_id)
-	{
-		$.post("/orders",{ product_id : product_id},
-		    function(data) {
-		       $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address+" .</p>");
-		    }
-		);
-	}
+    function createOrder(product_id) {
+        $('#buyButton').hide();
+        $("#send-address").text("Creating destination address with CoinBase. Please wait...");
+
+        $.post(
+                "/orders",
+                {product_id: product_id},
+                function (data) {
+                    $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address + " .</p>");
+                }
+        ).fail(function () {
+            $("#send-address").text("Error contacting CoinBase...");
+            $('#buyButton').show();
+        });
+    }
 </script>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<div>
-	<a href ="javascript:void(0)", onclick="createOrder('<%= @product.id %>');" > Buy </a>
+
+<body class="productlistingpage">
+
+<%= render 'layouts/navigation' %>
+
+<div class="content">
+
+
+  <div class="section">
+    <img src="/images/product.png" width="100%"/>
+
+    <div class="thinpadder">
+      <div class="leftimage pricelabel">BTC</div>
+      <h3 class="leftimage price"><%= @product.price %></h3>
+
+      <div class="clearing"></div>
+
+      <h4>
+        <%= @product.name %>
+      </h4>
+
+      <div>
+        <%= @product.description %>
+      </div>
+      <br/>
+
+
+      <div id="buyButton">
+        <a href="javascript:createOrder('<%= @product.id %>')"> Buy </a>
+      </div>
+
+      <div id="send-address">
+
+      </div>
+
+
+    </div>
+
+  </div>
+  <!-- end section -->
+
 </div>
+<!-- end content -->
 
-<div id = "send-address">
-
-</div>
+</body>
 
