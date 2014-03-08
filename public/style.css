@@ -187,9 +187,12 @@ td {
 }
 
 .section div {
+/*
 	overflow: hidden;
+*/
 	padding-bottom: 0.5em;
 	padding-top: 0.5em;
+
 }
 
 .section a {
@@ -368,3 +371,90 @@ div.circle-right{
 	padding-top: 35px;
 	
 }
+
+
+.preloader {
+    /*
+      position: absolute;
+      left: 0;
+      top: -100px;
+      z-index: 0;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      height: 100px;
+      width: 100%;
+      */
+    opacity: 0;
+    font-size: 25px;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+
+    /*
+      background: rgba(0,0,0,0.1);
+      */
+}
+
+.preloader.visible {
+    /*
+  top: 0;
+  */
+    opacity: 1;
+}
+
+.swiper-container {
+
+    /*
+      width: 100%;
+      height: 100%;
+      color: #fff;
+    */
+
+
+    text-align: center;
+    position: relative;
+    z-index: 10;
+
+}
+
+.swiper-slide {
+
+    /*
+      height: 100px;
+      width: 100%;
+      line-height: 100px;
+    */
+
+    opacity: 0.2;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+
+.swiper-slide-visible {
+    opacity: 1;
+}
+
+.stampedApproved {
+    /*
+	background-image:url('../img/approved-stamp.png');
+	background-repeat:no-repeat;
+	background-position:left top;
+	*/
+}
+
+.stampedNo {
+    /*
+	background-image:url('../img/no-stamp.png');
+	background-repeat:no-repeat;
+	background-position:right top;
+	*/
+}
+
+
+

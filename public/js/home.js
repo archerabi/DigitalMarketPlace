@@ -66,10 +66,10 @@
         //Show loader
         $('.preloader').addClass('visible');
 
-				// Navigate to buy link.
-				var activeSlide = mySwiper.activeSlide();
-				var activeSlideBuyHref = $(activeSlide).find('a').attr('href');
-        window.location.href = activeSlideBuyHref;
+          // Click buy link.
+          var activeSlide = mySwiper.activeSlide();
+          var activeSlideBuyHref = $(activeSlide).find('.buyButton').click();
+
         return;
       }
 
@@ -85,10 +85,9 @@
   $('.buy-button').on('click', function(e){
     e.preventDefault()
 
-		// Navigate to buy link.
+		// Click buy link.
 		var activeSlide = mySwiper.activeSlide();
-		var activeSlideBuyHref = $(activeSlide).find('a').attr('href');
-    window.location.href = activeSlideBuyHref;
+		var activeSlideBuyHref = $(activeSlide).find('.buyButton').click();
 
   });
   

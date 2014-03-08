@@ -94,38 +94,68 @@
 
       <% else %> <!-- else products uploaded -->
 
+          <!-- TODO style next and disable when no more items
 
-          <% @products.each do |x| %>
+        <div class="section">
 
-              <div class="section">
-                <img src="/images/product.png" width="100%"/>
+          <a class="next-button" href="#">Next</a>
 
-                <div class="thinpadder">
-                  <div class="leftimage pricelabel">BTC</div>
-                  <h3 class="leftimage price"><%= x.price %></h3>
+          <a class="buy-button" href="#">Buy</a>
 
-                  <div class="rightimage" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
-                    <div class="button">
-                      &nbsp;&nbsp;BUY&nbsp;NOW&nbsp;&nbsp;
+
+            <div class="preloader">
+              Purchasing...
+            </div>
+
+
+          </div>
+         -->
+
+          <div class="preloader section">
+            Purchasing...
+          </div>
+
+          <div class="swiper-container section">
+            <div class="swiper-wrapper" style="margin: 0px; padding: 0px">
+
+              <% @products.each do |x| %>
+
+                  <div class="swiper-slide" style="margin: 0px; padding: 0px">
+                    <img src="/images/product.png" width="100%"/>
+
+                    <div class="thinpadder">
+                      <div class="leftimage pricelabel">BTC</div>
+                      <h3 class="leftimage price"><%= x.price %></h3>
+
+                      <div class="rightimage buyButton" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
+                        <div class="button">
+                          &nbsp;&nbsp;BUY&nbsp;NOW&nbsp;&nbsp;
+                        </div>
+                      </div>
+
+                      <div class="clearing" >&nbsp;</div>
+
+                      <h4>
+                        <%= x.name %>
+                      </h4>
+
+                      <div>
+                        <%= x.description %>
+                      </div>
+
+                      <div class="clearing" >&nbsp;</div>
+
                     </div>
-                  </div>
-                  <div class="clearing"></div>
 
-                  <h4>
-                    <%= x.name %>
-                  </h4>
+                    <div class="clearing" >&nbsp;</div>
 
-                  <div>
-                    <%= x.description %>
-                  </div>
-                  <br/>
-                </div>
+                  </div><!-- end swiper slide -->
 
-              </div><!-- end section -->
+              <% end %><!-- end each -->
 
+            </div><!-- end swiper wrapper -->
 
-          <% end %><!-- end each -->
-
+          </div><!-- end section -->
 
           <!-- end else no products uploaded -->
       <% end %>
@@ -133,6 +163,9 @@
 
     </div>
     <!-- end content -->
+
+    <script src="/js/idangerous.swiper-2.1.min.js"></script>
+    <script src="/js/home.js"></script>
 
     </body>
 
