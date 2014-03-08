@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
 		content = @product.blob.read
 		filename = Pathname.new(@product.blob.inspect).basename.to_s
 		disposition = "attachment"
-		send_data content, :disposition => disposition , filename: filename
+		send_data content, :disposition => disposition 
 	end
 
 	def show_public
@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 			content = product.blob.read
 			filename = Pathname.new(product.blob.inspect).basename.to_s
 			disposition = "attachment"
-			send_data content, :disposition => disposition , filename: filename
+			send_data content, :disposition => disposition
 		else
 			render :file => "public/401.html", :status => :unauthorized
 		end
