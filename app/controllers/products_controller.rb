@@ -27,7 +27,8 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		content = @product.blob.read
 		filename = Pathname.new(@product.blob.inspect).basename.to_s
-		send_data content, :disposition=>"attachment; filename='#{filename}'",:filename => filename
+		disposition = "attachment; filename='"+ filename +"'"
+		send_data content, :disposition=> disposition
 	end
 
 	def show_public
@@ -40,7 +41,8 @@ class ProductsController < ApplicationController
 			product = Product.find( order.product_id )
 			content = product.blob.read
 			filename = Pathname.new(product.blob.inspect).basename.to_s
-			send_data content, :disposition=>"attachment; filename='#{filename}'",:filename => filename
+			disposition = "attachment; filename='"+ filename +"'"
+			send_data content, :disposition=> disposition
 		else
 			render :file => "public/401.html", :status => :unauthorized
 		end
