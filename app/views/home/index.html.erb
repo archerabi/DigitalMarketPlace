@@ -77,11 +77,7 @@ http://smotko.si/tinder-css/
 			<% @products.each do |x| %>
 		
 				<div class="swiper-slide red-slide">
-					<div class="title">
-						<%=  x.name %>
-						<%=  x.price %>
-							BTC	
-					</div>
+					
 					<div>			
 						<%= link_to "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" do %>
 							BUY

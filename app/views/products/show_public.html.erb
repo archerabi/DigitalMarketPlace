@@ -1,13 +1,4 @@
-<script>
-	function createOrder(product_id)
-	{
-		$.post("/orders",{ product_id : product_id},
-		    function(data) {
-		       $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address+" .</p>");
-		    }
-		);
-	}
-</script>
+
 <p>
   <strong>Name:</strong>
   <%= @product.name %>
@@ -22,11 +13,11 @@
   <strong>Price:</strong>
   <%= @product.price %>
 </p>
-<div>
+<div id="buy-button">
 	<a href ="javascript:void(0)", onclick="createOrder('<%= @product.id %>');" > Buy </a>
 </div>
 
-<div id = "send-address">
-
+<div id ="buy-widget-container" class="buy-widget-container">
+	
 </div>
 

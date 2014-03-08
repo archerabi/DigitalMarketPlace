@@ -41,8 +41,11 @@ require 'json'
 		end
 
 		def get_order id
-			puts "**** GEtting order from api/v1/orders/#{id}"
 			call :get,"api/v1/orders/#{id}"
+		end
+
+		def sell_price_of_btc
+			call :get, 'api/v1/prices/sell'
 		end
 
 		def call method_name, url, opts = {} 
@@ -59,13 +62,13 @@ require 'json'
 					response = @token.get url
 				end
 			rescue OAuth2::Error => e
-				puts "Caught Exception #{e.description}"
+				puts "Caught Exception while requesting #{method_name}. Refreshing tokens"
 				puts e
 			end
 			if response.nil? || response.status != 200
 				begin
 					refresh_token
-					return call method_name, url
+					return call method_name, url, opts
 				rescue OAuth2::Error => e
 					puts "Caught Exception on refresh"
 					puts e
@@ -93,6 +96,7 @@ require 'json'
 		def refresh_token
 			@token = @token.refresh!	
 			save_tokens
+			puts "Refreshed tokens"
 		end
 
 		def get_client

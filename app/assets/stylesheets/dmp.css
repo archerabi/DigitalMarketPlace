@@ -1,0 +1,13 @@
+#buy-widget-root{
+	border:	1px solid;
+	border-radius:	10px;
+	width: 500px;
+}
+
+#timer{
+	margin: 2px;
+}
+
+#price{
+	margin: 2px;
+}

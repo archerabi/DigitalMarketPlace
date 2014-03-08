@@ -2,7 +2,7 @@
 require 'coinbase_api'
 
 class ProductsController < ApplicationController
-	before_filter :authenticate_user! , :except => [:show_public, :get_order, :create_order]
+	before_filter :authenticate_user! , :except => [:show_public, :download_public]
 
 	def new
 		
@@ -12,16 +12,10 @@ class ProductsController < ApplicationController
 		@product = Product.new(params[:product])
 		@product.user_id = current_user.id
 		if @product.save
-			redirect_to @product
-		else
-			@product.errors.each { |k, v| errors << v }
-			puts @product.errors
-			@product = errors.join("\n")
-			respond_to do |format|
-				format.html { render :new }
-				format.js
-			end
+			return redirect_to @product
 		end
+		flash[:error] = @product.errors.full_messages.join("<br>").html_safe
+		redirect_to "/products/new"
 	end
 
 	def show
@@ -40,4 +34,15 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 	end
 
+	def download_public
+		order = Order.find_by :download_code => params[:code]
+		if order.paid and order.cookie == cookies['_DigitalMarketplace_session']
+			product = Product.find( order.product_id )
+			content = product.blob.read
+			filename = Pathname.new(product.blob.inspect).basename.to_s
+			send_data content, filename: filename
+		else
+			render :file => "public/401.html", :status => :unauthorized
+		end
+	end
 end
