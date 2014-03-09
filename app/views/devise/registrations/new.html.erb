@@ -1,32 +1,45 @@
-<body class="productlistingpage">
+<body class="registerpage">
 <%= render 'layouts/navigation' %>
 <div class="content">
-  <div class="section">
 
-    <h2>Sign up</h2>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="section padder loginbox">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+        <%= devise_error_messages! %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+        <h2>CREATE NEW ACCOUNT</h2>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+        <div><%= f.label(:email, 'EMAIL') %></div>
+        <%= f.email_field :email, :autofocus => true, :size => 10 %>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+        <div><%= f.label(:password, 'PASSWORD') %></div>
+        <%= f.password_field :password %>
 
-<%= render "devise/shared/links" %>
+        <div><%= f.label(:password_confirmation, 'CONFIRM PASSWORD') %></div>
+        <%= f.password_field :password_confirmation %>
 
+        <div class="rightimage" onclick="  $( 'form' ).submit();  ">
+          <div class="createbutton">
+            &nbsp;&nbsp;CREATE&nbsp;ACCOUNT&nbsp;&nbsp;
+          </div>
+        </div>
 
+        <div class="leftimage">
+          <br /><br />
+          Already have an account?<br />
+          <a href="/users/sign_in">Login here</a>
+        </div>
 
+        <div class="clearing"></div>
 
-  </div> <!-- end section -->
-</div> <!-- end content -->
+  </div>
+  <!-- end section -->
+
+  <% end %><!-- end form -->
+
+      </div>
+<!-- end content -->
 </body>
 
 
