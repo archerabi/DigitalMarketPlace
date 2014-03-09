@@ -68,7 +68,7 @@
 
           // Click buy link.
           var activeSlide = mySwiper.activeSlide();
-          var activeSlideBuyHref = $(activeSlide).find('.buyButton').click();
+          var activeSlideBuyHref = $(activeSlide).find('.rightimage').click();
 
         return;
       }
@@ -87,7 +87,7 @@
 
 		// Click buy link.
 		var activeSlide = mySwiper.activeSlide();
-		var activeSlideBuyHref = $(activeSlide).find('.buyButton').click();
+		var activeSlideBuyHref = $(activeSlide).find('.rightimage').click();
 
   });
   

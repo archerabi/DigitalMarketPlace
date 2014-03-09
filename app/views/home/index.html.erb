@@ -10,12 +10,12 @@
       <div class="sectionheader">
 
         <div class="rightside" onclick="window.location = '/products/new' ">
-          <div class="button" style="width: 100%">
+          <div class="createbutton" id="createlisting">
             &nbsp;&nbsp;CREATE&nbsp;NEW&nbsp;LISTING&nbsp;&nbsp;
           </div>
         </div>
 
-        <h2 class="leftside">CURRENT LISTINGS</h2>
+        <h2 class="leftside" id="dashboardtitle">CURRENT LISTINGS</h2>
 
         <br class="clearing"/>
       </div>
@@ -27,9 +27,9 @@
           </div>
       <% end %>
 
-      <div class="section">
+      <div class="section" id="dashcontainer">
 
-        <div class="padder" onclick="window.location = 'productlisting.html' ">
+        <div class="padder" id="dashboardtable" >
           <table>
 
             <!-- if no products by this user -->
@@ -40,7 +40,8 @@
 
                 <!-- else products by this user -->
             <% else %>
-                <tr>
+                <thead>
+                <tr id="tablehead">
                   <th>Product Name</th>
                   <th>Unit Price</th>
                   <!-- TODO
@@ -48,6 +49,8 @@
                   <th>Total Sales</th>
                   -->
                 </tr>
+                </thead>
+                <tbody>
                 <% current_user.products.each do |x| %>
                     <tr>
                       <td>
@@ -63,6 +66,7 @@
                       -->
                     </tr>
                 <% end %> <!-- end each -->
+                </tbody>
             <% end %> <!-- end else products by this user -->
 
           </table>
@@ -115,39 +119,39 @@
             Purchasing...
           </div>
 
-          <div class="swiper-container section">
+          <div class="swiper-container product">
             <div class="swiper-wrapper" style="margin: 0px; padding: 0px">
 
               <% @products.each do |x| %>
 
                   <div class="swiper-slide" style="margin: 0px; padding: 0px">
-                    <img src="/images/product.png" width="100%"/>
 
-                    <div class="thinpadder">
-                      <div class="leftimage pricelabel">BTC</div>
-                      <h3 class="leftimage price"><%= x.price %></h3>
+                    <img src="images/product.png" width="100%" />
 
-                      <div class="rightimage buyButton" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
-                        <div class="button">
-                          &nbsp;&nbsp;BUY&nbsp;NOW&nbsp;&nbsp;
+                    <div class="productlisting">
+                      <div class="buycontrols" >
+                        <div class="leftimage pricelabel">BTC</div>
+                        <h3 class="leftimage" id="price"><%= x.price %></h3>
+
+                        <div class="rightimage" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
+                          <div class="buybutton">
+                            BUY NOW
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="productinfo">
+                        <h1 class="producttitle">
+                          <%= x.name %>
+                        </h1>
+
+                        <div class="productdescription">
+                          <%= x.description %>
                         </div>
                       </div>
-
-                      <div class="clearing" >&nbsp;</div>
-
-                      <h4>
-                        <%= x.name %>
-                      </h4>
-
-                      <div>
-                        <%= x.description %>
-                      </div>
-
-                      <div class="clearing" >&nbsp;</div>
+                      <br />
 
                     </div>
-
-                    <div class="clearing" >&nbsp;</div>
 
                   </div><!-- end swiper slide -->
 
