@@ -15,17 +15,18 @@
           </div>
         </div>
 
+        <% if connect_to_coinbase_visible? %>
+            <div class="rightside" onclick="window.location = '<%= link_to_coinbase_auth %>' " style="margin-right: 1em" >
+              <div class="createbutton" id="createlisting">
+                &nbsp;&nbsp;CONNECT&nbsp;COINBASE&nbsp;&nbsp;
+              </div>
+            </div>
+        <% end %>
+
         <h2 class="leftside" id="dashboardtitle">CURRENT LISTINGS</h2>
 
         <br class="clearing"/>
       </div>
-
-      <!-- TODO style -->
-      <% if connect_to_coinbase_visible? %>
-          <div class="section">
-            <%= link_to "Connect Coinbase Account", link_to_coinbase_auth %>
-          </div>
-      <% end %>
 
       <div class="section" id="dashcontainer">
 

@@ -9,8 +9,9 @@
                 />
 
               <div class="login">
-                <strong><%= current_user.email %></strong>
-                <%= link_to "LOGOUT", destroy_user_session_path, :method => 'delete' %>
+                <%= link_to destroy_user_session_path, :method => 'delete' do %>
+                    LOGOUT <%= current_user.email.upcase %>
+                <% end %>
               </div>
 
               <div class="login">

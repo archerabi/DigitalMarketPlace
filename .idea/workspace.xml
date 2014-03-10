@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421f4592-b568-439e-b393-b350e058a104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
     </list>
     <ignored path="DigitalMarketPlace.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,6 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="_navigation.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="0.20560747" vertical-offset="48" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,15 +57,20 @@
         <entry file="file://$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="0" selection-start="511" selection-end="580" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="465">
-              <folding />
+              <folding>
+                <marker date="1394236696000" expanded="true" signature="32:576" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="89:547" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="113:519" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="318:401" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.9662577" vertical-offset="0" max-vertical-offset="720">
+            <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="-26.25" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -66,7 +80,24 @@
         <entry file="file://$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="29" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="525">
-              <folding />
+              <folding>
+                <marker date="1394236696000" expanded="true" signature="32:765" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="89:736" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="113:708" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="359:467" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="476:598" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="881" selection-end="881" vertical-scroll-proportion="-16.25" vertical-offset="45" max-vertical-offset="2760">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,14 +131,14 @@
         <option value="$PROJECT_DIR$/app/views/products/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/show_public.html.erb" />
         <option value="$PROJECT_DIR$/public/css/demo.swiper.css" />
-        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/public/how.html" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
         <option value="$PROJECT_DIR$/public/js/home.js" />
         <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
       </list>
     </option>
   </component>
@@ -760,27 +791,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/confirmations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="450" />
+        <state line="24" column="0" selection-start="617" selection-end="617" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="450">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/mailer/confirmation_instructions.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="375" />
+        <state line="19" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/mailer/reset_password_instructions.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="405" />
+        <state line="21" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="405">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/mailer/unlock_instructions.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390" />
+        <state line="20" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/passwords/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="480" />
+        <state line="26" column="0" selection-start="587" selection-end="587" vertical-scroll-proportion="-16.25" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/shared/_links.erb">
@@ -795,7 +836,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-29.375" vertical-offset="0" max-vertical-offset="795" />
+        <state line="47" column="0" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-29.375" vertical-offset="0" max-vertical-offset="795">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/idangerous.swiper-2.1.min.js">
@@ -815,7 +858,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="570" selection-end="822" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="780" />
+        <state line="31" column="0" selection-start="570" selection-end="822" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
@@ -825,7 +870,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/show_public.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="72" selection-start="1161" selection-end="1161" vertical-scroll-proportion="-16.25" vertical-offset="285" max-vertical-offset="1005" />
+        <state line="45" column="72" selection-start="1161" selection-end="1161" vertical-scroll-proportion="-16.25" vertical-offset="285" max-vertical-offset="1005">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/home.js">
@@ -842,20 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="135" column="46" selection-start="3591" selection-end="3601" vertical-scroll-proportion="0.0" vertical-offset="2025" max-vertical-offset="2745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="984" selection-end="984" vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="1005">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/how.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="39" selection-start="421" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="1350">
@@ -866,14 +899,25 @@
     <entry file="file://$PROJECT_DIR$/app/views/devise/passwords/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="-18.125" vertical-offset="0" max-vertical-offset="525">
-          <folding />
+          <folding>
+            <marker date="1394236696000" expanded="true" signature="32:765" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="89:736" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="113:708" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="359:467" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="476:598" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="0" selection-start="511" selection-end="580" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="465">
-          <folding />
+          <folding>
+            <marker date="1394236696000" expanded="true" signature="32:576" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="89:547" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="113:519" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="318:401" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -893,7 +937,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.9662577" vertical-offset="0" max-vertical-offset="720">
+        <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="-26.25" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="881" selection-end="881" vertical-scroll-proportion="-16.25" vertical-offset="45" max-vertical-offset="2760">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="0.20560747" vertical-offset="48" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
