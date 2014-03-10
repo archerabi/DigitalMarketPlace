@@ -10,12 +10,11 @@
                     $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address + " .</p>");
                 }
         ).fail(function () {
-            $("#send-address").text("Error contacting CoinBase...");
-            $('#buyButton').show();
-        });
+                    $("#send-address").text("Error contacting CoinBase...");
+                    $('#buyButton').show();
+                });
     }
 </script>
-
 
 <body class="productlistingpage">
 
@@ -23,39 +22,45 @@
 
 <div class="content">
 
+  <div class="product">
 
-  <div class="section">
-    <img src="/images/product.png" width="100%"/>
+    <img src="/images/product.png" width="100%" />
 
-    <div class="thinpadder">
-      <div class="leftimage pricelabel">BTC</div>
-      <h3 class="leftimage price"><%= @product.price %></h3>
-
-      <div class="clearing"></div>
-
-      <h4>
-        <%= @product.name %>
-      </h4>
-
-      <div>
-        <%= @product.description %>
+    <div class="productlisting">
+      <div class="buycontrols" >
+        <div class="leftimage pricelabel">BTC</div>
+        <h3 class="leftimage" id="price"><%= @product.price %></h3>
       </div>
-      <br/>
+      <div class="productinfo">
+        <h1 class="producttitle">
+          <%= @product.name %>
+        </h1>
 
-      <div id="buyButton">
-        <a href="javascript:createOrder('<%= @product.id %>')"> Checkout </a>
-      </div>
+        <div class="productdescription">
+          <%= @product.description %>
+        </div>
 
-      <div id="send-address">
+        <div style="clear:both">&nbsp;</div>
+
+        <div class="rightimage" onclick="createOrder('<%= @product.id %>')">
+          <div class="buybutton">
+            CHECKOUT
+          </div>
+        </div>
+
+        <div style="clear:both">&nbsp;</div>
+
+        <div id="send-address">
+        </div>
+
       </div>
+      <br />
 
     </div>
 
   </div>
-  <!-- end section -->
 
 </div>
-<!-- end content -->
 
 </body>
-
+</html>
