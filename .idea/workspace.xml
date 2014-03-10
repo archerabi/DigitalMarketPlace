@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="421f4592-b568-439e-b393-b350e058a104" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/new.html.erb" afterPath="$PROJECT_DIR$/app/views/products/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
     </list>
     <ignored path="DigitalMarketPlace.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_navigation.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_navigation.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="0.20560747" vertical-offset="48" max-vertical-offset="1020">
+            <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="-5.5" vertical-offset="48" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,34 @@
       <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="0" selection-end="1169" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="795">
+            <state line="6" column="61" selection-start="147" selection-end="149" vertical-scroll-proportion="-1.8" vertical-offset="0" max-vertical-offset="795">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="43" selection-start="739" selection-end="739" vertical-scroll-proportion="-13.75" vertical-offset="60" max-vertical-offset="795">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="73" selection-start="708" selection-end="728" vertical-scroll-proportion="-16.5" vertical-offset="114" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="products_helper.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/products_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="0.5116279" vertical-offset="20" max-vertical-offset="450">
               <folding />
             </state>
           </provider>
@@ -71,7 +98,15 @@
         <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="-26.25" vertical-offset="0" max-vertical-offset="720">
-              <folding />
+              <folding>
+                <marker date="1394236696000" expanded="true" signature="32:1342" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="89:1313" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="113:1285" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="336:419" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="601:749" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="758:856" placeholder="..." />
+                <marker date="1394236696000" expanded="true" signature="865:1016" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -128,17 +163,17 @@
         <option value="$PROJECT_DIR$/app/views/devise/passwords/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/products/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/products/show_public.html.erb" />
         <option value="$PROJECT_DIR$/public/css/demo.swiper.css" />
         <option value="$PROJECT_DIR$/public/how.html" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/public/js/home.js" />
-        <option value="$PROJECT_DIR$/public/style.css" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
+        <option value="$PROJECT_DIR$/public/style.css" />
+        <option value="$PROJECT_DIR$/app/views/products/new.html.erb" />
       </list>
     </option>
   </component>
@@ -237,24 +272,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DigitalMarketPlace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DigitalMarketPlace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fonts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -669,6 +686,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32914925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -680,7 +698,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32914925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -834,13 +851,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="689" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1431" selection-end="1431" vertical-scroll-proportion="-29.375" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/idangerous.swiper-2.1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="317" selection-start="21593" selection-end="21599" vertical-scroll-proportion="0.33333334" vertical-offset="586" max-vertical-offset="1440" />
@@ -853,12 +863,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/product.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="39" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="570" selection-end="822" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="780">
+        <state line="4" column="39" selection-start="99" selection-end="99" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
           <folding />
         </state>
       </provider>
@@ -878,13 +883,6 @@
     <entry file="file://$PROJECT_DIR$/public/js/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="67" selection-start="2225" selection-end="2225" vertical-scroll-proportion="0.0" vertical-offset="987" max-vertical-offset="1650">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="9900">
           <folding />
         </state>
       </provider>
@@ -921,24 +919,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="870" selection-end="870" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="0" selection-end="1169" vertical-scroll-proportion="-8.125" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1346" selection-end="1346" vertical-scroll-proportion="-26.25" vertical-offset="0" max-vertical-offset="720">
-          <folding />
+          <folding>
+            <marker date="1394236696000" expanded="true" signature="32:1342" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="89:1313" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="113:1285" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="336:419" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="601:749" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="758:856" placeholder="..." />
+            <marker date="1394236696000" expanded="true" signature="865:1016" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -953,7 +945,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_navigation.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="0.20560747" vertical-offset="48" max-vertical-offset="1020">
+        <state line="12" column="56" selection-start="389" selection-end="389" vertical-scroll-proportion="-5.5" vertical-offset="48" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="61" selection-start="147" selection-end="149" vertical-scroll-proportion="-1.8" vertical-offset="0" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="99" selection-start="534" selection-end="534" vertical-scroll-proportion="0.4054054" vertical-offset="150" max-vertical-offset="9915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="870" selection-end="870" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="43" selection-start="739" selection-end="739" vertical-scroll-proportion="-13.75" vertical-offset="60" max-vertical-offset="795">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="73" selection-start="708" selection-end="728" vertical-scroll-proportion="-16.5" vertical-offset="114" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/products_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="6" selection-start="342" selection-end="342" vertical-scroll-proportion="0.5116279" vertical-offset="20" max-vertical-offset="450">
           <folding />
         </state>
       </provider>

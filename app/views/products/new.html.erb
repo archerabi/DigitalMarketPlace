@@ -1,47 +1,47 @@
-<body class="productlistingpage">
+<body class="createlistingpage">
 <%= render 'layouts/navigation' %>
 <div class="content">
-  <div class="section">
+
+  <%= form_for :product, html: { multipart: true }, url: products_path do |f| %>
+
+  <div class="section padder createform">
+    <h2>CREATE LISTING</h2>
+    <br/>
+
+    <div><%= f.label(:name, 'TITLE') %></div>
+    <%= f.text_field :name, placeholder: 'Type in your product name' %>
+
+    <div><%= f.label(:price, 'PRICE') %></div>
+    <%= f.text_field :price, placeholder: 'Price in BTC' %>
 
 
-<div class="container">
-
-	<div class="row">
-		<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<%= form_for :product, html: { multipart: true }, url: products_path do |f| %>
-				<div class="form-group">
-					<!-- <input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3"> -->
-					<%= f.text_field :name, class:'form-control input-lg', placeholder: 'Name' %><br>
-				</div>
-				
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
-						<div class="form-group">
-	                        <%= f.text_field :price, class:'form-control input-lg', placeholder: 'Price in BTC' %><br>
-						</div>
-					</div>
-
-				</div>
-				<div class="form-group">
-					<!-- <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4"> -->
-    				 <%= f.text_area :description, class:'form-control input-lg', placeholder: 'Description' %>
-				</div>
-				<div class="form-group">
-					<%= f.file_field :blob %>
-				</div>
-				<hr class="colorgraph">
-				<div class="row">
-					 <%= f.submit 'Submit' , class: "btn btn-primary btn-block btn-lg" %>
-				</div>
-			<% end %>
-		</div>
-	</div>
-</div>
+    <!-- TODO image upload
+    <div>
+      IMAGE (OPTIONAL)
+    </div>
+    <input type="text" placeholder="Upload a product image" />
+    -->
 
 
+    <div><%= f.label(:description, 'DESCRIPTION (OPTIONAL)') %></div>
+    <%= f.text_area :description, rows: 4, placeholder: 'Write some additional details about your product' %>
 
-  </div> <!-- end section -->
-</div> <!-- end content -->
+    <div><%= f.label(:blob, 'UPLOAD DIGITAL FILE') %></div>
+    <%= f.file_field :blob, placeholder: 'Upload your product' %>
+
+    <div class="rightimage" onclick="  $( 'form' ).submit();  ">
+      <div class="createbutton">
+        &nbsp;&nbsp;CREATE&nbsp;LISTING&nbsp;&nbsp;
+      </div>
+    </div>
+
+    <div class="clearing"></div>
+
+  </div><!-- end section -->
+
+  <% end %>
+
+</div><!-- end content -->
+
 </body>
-
 

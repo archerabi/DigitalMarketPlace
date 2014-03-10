@@ -26,7 +26,8 @@ html, body {
 	font-size: 14px;
 }
 
-input {
+/* Keep inputs and text areas set at 100% width from overlapping their parent due to padding/border */
+input, textarea {
     box-sizing:border-box;
     -moz-box-sizing:border-box; /* Firefox */
 }
