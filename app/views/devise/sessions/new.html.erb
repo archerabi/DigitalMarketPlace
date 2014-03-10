@@ -18,10 +18,14 @@
         <div><%= f.label(:password, 'PASSWORD') %></div>
         <%= f.password_field :password %>
 
+        <!-- TODO style remember me check box and uncomment
         <% if devise_mapping.rememberable? -%>
             <div><%= f.label :remember_me %></div>
             <%= f.check_box :remember_me %>
         <% end -%>
+        -->
+        <%=f.hidden_field :remember_me, :value => "true" %>
+
 
         <div class="rightimage" onclick="  $( 'form' ).submit();  ">
           <div class="createbutton">
