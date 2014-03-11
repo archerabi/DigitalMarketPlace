@@ -7,11 +7,12 @@ var time ;
 
 function createOrder(product_id)
 {
-	$("#buy-widget-container").append("<div><label id=\"buy-widget-root\"/>");
-	$("#buy-widget-root").append("<div><label id=\"timer\"/></div><div id = \"send-address\"></div>");
-	$("#buy-widget-root").append("<div><label id=\"price\"/>");
+	
 	$.post("/orders",{ product_id : product_id},
 	    function(data) {
+	       $("#buy-widget-container").append("<div><label id=\"buy-widget-root\"/>");
+		   $("#buy-widget-root").append("<div><label id=\"timer\"/></div><div id = \"send-address\"></div>");
+		   $("#buy-widget-root").append("<div><label id=\"price\"/>");
 	       $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address+" .</p>");
 	       $("#price").append("<p>"+data.order.btc_price+" BTC </p>");
 	       $("#buy-button").hide();

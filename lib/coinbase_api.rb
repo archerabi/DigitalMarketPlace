@@ -62,20 +62,19 @@ require 'json'
 					response = @token.get url
 				end
 			rescue OAuth2::Error => e
-				puts "Caught Exception while requesting #{method_name}. Refreshing tokens"
-				puts e
+				Rails.logger.info "Caught Exception while requesting #{method_name}. Refreshing tokens"
 			end
 			if response.nil? || response.status != 200
 				begin
 					refresh_token
 					return call method_name, url, opts
 				rescue OAuth2::Error => e
-					puts "Caught Exception on refresh"
-					puts e
+					Rails.logger.info "Caught Exception on refresh"
 					@user.coinbase_code = nil
 					@user.coinbase_access_token = nil
 					@user.coinbase_refresh_token = nil
 					@user.save
+					throw e
 				end
 			end
 			return response

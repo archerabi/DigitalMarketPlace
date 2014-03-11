@@ -5,7 +5,6 @@ require 'json'
 class OrdersController < ApplicationController
 
 	def create
-		puts "Params #{params}"
 		product = Product.find(params[:product_id])
 		user = User.find(product.user_id)
 		coinbase = CoinbaseApi.new user
@@ -17,11 +16,12 @@ class OrdersController < ApplicationController
 			order.cookie = cookies['_DigitalMarketplace_session']
 			response = coinbase.sell_price_of_btc
 			order.btc_price = product.price.to_f / response.parsed['subtotal']['amount'].to_f
-			order.btc_price = order.btc_price.round(8) # bitcoin subunit if 10^-8
+			order.btc_price = order.btc_price.round(8) # bitcoin subunit is 10^-8
 			order.save
 			render :json => { order: { id: order.id , receive_address: order.address, btc_price: order.btc_price}}
 		rescue OAuth2::Error => e
-			puts e
+			Rails.logger.info e
+			return render :status => :internal_server_error
 		end
 	end
 
