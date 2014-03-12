@@ -1,26 +1,48 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<body class="productlistingpage">
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+<%= render 'layouts/navigation' %>
 
-<%= link_to "Download", product_download_path %>
+<div class="content">
 
-<br/>
-<br/>
-<div>
-	Paste the following HTML to create a Download Link
-	<div>
-		<textarea rows="2" cols="110"><a href='<%= get_product_buy_link @product %>'> Buy <%= @product.name %> </a>
-		</textarea>
-	</div>
+  <div class="product">
+
+    <img src="/images/product.png" width="100%" />
+
+    <div class="productlisting">
+      <div class="buycontrols" >
+        <div class="leftimage pricelabel">BTC</div>
+        <h3 class="leftimage" id="price"><%= @product.price %></h3>
+      </div>
+      <div class="productinfo">
+        <h1 class="producttitle">
+          <%= @product.name %>
+        </h1>
+
+        <div class="productdescription">
+          <%= @product.description %>
+        </div>
+
+        <div>
+          <%= link_to "Download", product_download_path %>
+        </div>
+        <br/>
+
+        <div>
+          Paste the following HTML to create a Download Link
+          <div>
+            <textarea rows="2" cols="110"><a href='<%= get_product_buy_link @product %>'> Buy <%= @product.name %> </a>
+            </textarea>
+          </div>
+        </div>
+
+      </div>
+      <br />
+
+    </div>
+
+  </div>
+
 </div>
+
+</body>
+</html>

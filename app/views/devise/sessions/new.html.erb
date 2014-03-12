@@ -1,0 +1,47 @@
+<body class="registerpage">
+
+<%= render 'layouts/navigation' %>
+
+<div class="content">
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+      <div class="section padder loginbox">
+
+        <h2>MERCHANT LOGIN</h2>
+
+        <%= devise_error_messages! %>
+
+        <div><%= f.label(:email, 'EMAIL') %></div>
+        <%= f.email_field :email, :autofocus => true, :size => 10 %>
+
+        <div><%= f.label(:password, 'PASSWORD') %></div>
+        <%= f.password_field :password %>
+
+        <!-- TODO style remember me check box and uncomment
+        <% if devise_mapping.rememberable? -%>
+            <div><%= f.label :remember_me %></div>
+            <%= f.check_box :remember_me %>
+        <% end -%>
+        -->
+        <%=f.hidden_field :remember_me, :value => "true" %>
+
+
+        <div class="rightimage" onclick="  $( 'form' ).submit();  ">
+          <div class="createbutton">
+            &nbsp;&nbsp;SIGN&nbsp;IN&nbsp;&nbsp;
+          </div>
+        </div>
+
+        <div class="clearing"></div>
+
+      </div>
+      <!-- end section -->
+
+      <% end %><!-- end form -->
+
+</div>
+<!-- end content -->
+</body>
+
+

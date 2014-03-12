@@ -3,37 +3,19 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title><%= content_for?(:title) ? yield(:title) : "Digital Marketplace" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "qwikbit digital marketplace" %></title>
   
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Digital Marketplace" %>">
-  
-  <%= stylesheet_link_tag "application", media: "all" %>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "qwikbit digital marketplace" %>">
+
   <%= javascript_include_tag "application" %>
 
-  <link rel="stylesheet" href="css/idangerous.swiper.css">
-
-  <link rel="stylesheet" href="css/demo.swiper.css">
-  
-  <meta name="viewport" content="width=device-width">
+  <link rel='stylesheet' href='/style.css' />
+  <link rel="stylesheet" href="/css/idangerous.swiper.css" />
 
   <%= csrf_meta_tags %>
 
 </head>
-<body>
-  <header>
-    <%= render 'layouts/navigation' %>
-  </header>
-  <main role="main">
-   <%= render 'layouts/messages' %>
-   <!--<% if notice %>
-    <p class="alert alert-notice"><%= notice %></p>
-   <% end %>
-   <% if alert %>
-    <p class="alert alert-error"><%= alert %></p>
-   <% end %> -->
-   
-   <%= yield %>
 
- </main>
-</body>
+    <%= yield %>
+
 </html>
