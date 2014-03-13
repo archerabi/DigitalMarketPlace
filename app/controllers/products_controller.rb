@@ -2,7 +2,7 @@
 require 'coinbase_api'
 
 class ProductsController < ApplicationController
-	before_filter :authenticate_user! , :except => [:show_public, :download_public]
+	before_filter :authenticate_user! , :except => [:show_public, :download_public, :image]
 
 	def new
 		
@@ -36,7 +36,16 @@ class ProductsController < ApplicationController
 		filename = Pathname.new(@product.blob.inspect).basename.to_s
 		disposition = "attachment"
 		send_data content, :disposition => disposition 
-	end
+  end
+
+  def image
+    @product = Product.find(params[:id])
+    if @product.nil?
+      return render_404
+    end
+    content = @product.image.read
+    send_data content
+  end
 
 	def show_public
 		begin

@@ -141,6 +141,10 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v3.2.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.2.0, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.7.0, RVM: ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="columnize (v0.3.6, RVM: ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger (v1.6.6, RVM: ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger-linecache (v1.2.0, RVM: ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="debugger-ruby_core_source (v1.3.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v3.2.3, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.0.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
@@ -170,6 +174,7 @@
     <orderEntry type="library" scope="PROVIDED" name="plucky (v0.5.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.4, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.9.12.6, RVM: ruby-1.9.3-p327) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="pry-debugger (v0.2.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pry-rails (v0.3.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.5, RVM: ruby-1.9.3-p327) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.2, RVM: ruby-1.9.3-p327) [gem]" level="application" />

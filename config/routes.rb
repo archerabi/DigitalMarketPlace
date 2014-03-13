@@ -9,6 +9,9 @@ DigitalMarketplace::Application.routes.draw do
   end
   root to: "home#index"
   get '/products/:id/download', to: 'products#download', as: 'product_download'
+
+  match '/systems/uploads/uploads/product/image/:id/:filename' => 'products#image'
+
   get '/products/public/:id', to: 'products#show_public', as: 'product_public' 
   get '/products/download/:code', to: 'products#download_public'
   

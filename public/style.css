@@ -32,6 +32,24 @@ input, textarea {
     -moz-box-sizing:border-box; /* Firefox */
 }
 
+.productImage {
+    max-height: 250px;
+    max-width: 550px;
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border-style:none;
+}
+
+.productImageWrapper {
+    text-align: center;
+    background-color: #29abe1;
+    margin: 0px;
+    padding: 0px;
+    border-style:none;
+}
+
 div {
 	color: #888;
 }
