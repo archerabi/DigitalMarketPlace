@@ -8,6 +8,8 @@
     <h2>CREATE LISTING</h2>
     <br/>
 
+    <%= render 'layouts/messages' %>
+
     <div><%= f.label(:name, 'TITLE') %></div>
     <%= f.text_field :name, placeholder: 'Type in your product name' %>
 

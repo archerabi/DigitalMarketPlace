@@ -1,4 +1,3 @@
-
 <script>
     function createOrder(product_id) {
         $('#buyButton').hide();
@@ -25,10 +24,12 @@
 
   <div class="product">
 
-    <div class="productImageWrapper"><img class="productImage" src="<%= @product.image_url %>" width="100%" /></div>
+    <%= render 'layouts/messages' %>
+
+    <div class="productImageWrapper"><img class="productImage" src="<%= @product.image_url %>" width="100%"/></div>
 
     <div class="productlisting">
-      <div class="buycontrols" >
+      <div class="buycontrols">
         <div class="leftimage pricelabel">BTC</div>
         <h3 class="leftimage" id="price"><%= @product.price %></h3>
       </div>
@@ -55,7 +56,7 @@
         </div>
 
       </div>
-      <br />
+      <br/>
 
     </div>
 

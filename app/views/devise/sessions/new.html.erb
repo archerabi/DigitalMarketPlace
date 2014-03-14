@@ -12,6 +12,8 @@
 
         <%= devise_error_messages! %>
 
+        <%= render 'layouts/messages' %>
+
         <div><%= f.label(:email, 'EMAIL') %></div>
         <%= f.email_field :email, :autofocus => true, :size => 10 %>
 
@@ -24,7 +26,7 @@
             <%= f.check_box :remember_me %>
         <% end -%>
         -->
-        <%=f.hidden_field :remember_me, :value => "true" %>
+        <%= f.hidden_field :remember_me, :value => "true" %>
 
 
         <div class="rightimage" onclick="  $( 'form' ).submit();  ">

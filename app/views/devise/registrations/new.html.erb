@@ -12,6 +12,8 @@
 
         <%= devise_error_messages! %>
 
+        <%= render 'layouts/messages' %>
+
         <div><%= f.label(:email, 'EMAIL') %></div>
         <%= f.email_field :email, :autofocus => true, :size => 10 %>
 

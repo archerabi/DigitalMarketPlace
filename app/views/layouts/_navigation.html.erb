@@ -1,62 +1,62 @@
-    <% if user_signed_in? %>
+<% if user_signed_in? %>
 
 
 
-          <div class="headerwrapper">
-            <div class="header">
-              <img src="/images/logoblue.png"
-                onclick="window.location = '/' "
-                />
+    <div class="headerwrapper">
+      <div class="header">
+        <img src="/images/logoblue.png"
+             onclick="window.location = '/' "
+        />
 
-              <div class="login">
-                <%= link_to destroy_user_session_path, :method => 'delete' do %>
-                    LOGOUT <%= current_user.email.upcase %>
-                <% end %>
-              </div>
-
-              <div class="login">
-                <%= link_to "EDIT PROFILE", edit_user_registration_path %>
-              </div>
-
-              <div class="login createlistinglink">
-                <a href="/products/new">CREATE LISTING</a>
-              </div>
-
-              <div class="login dashboardlink">
-                <a href="/">DASHBOARD</a>
-              </div>
-
-            </div>
-            <div class="clearing"></div>
-          </div>
-
-
-
-    <% else %>
-
-
-        <div class="headerwrapper">
-          <div class="header">
-            <img src="/images/logoblue.png"
-                 onclick="window.location = '/' "
-                 />
-
-            <div class="login">
-              <img width="10" height="15" src="/images/lock_icon_gray.png" />
-              <%= link_to "MERCHANT LOGIN", new_user_session_path %>
-            </div>
-
-            <div class="nav">
-              <a href="/how.html">HOW IT WORKS</a>
-              <%= link_to "SIGN UP", new_user_registration_path %>
-            </div>
-
-          </div>
-          <div class="clearing"></div>
+        <div class="login">
+          <%= link_to destroy_user_session_path, :method => 'delete' do %>
+              LOGOUT <%= current_user.email.upcase %>
+          <% end %>
         </div>
 
+        <div class="login">
+          <%= link_to "EDIT PROFILE", edit_user_registration_path %>
+        </div>
+
+        <div class="login createlistinglink">
+          <a href="/products/new">CREATE LISTING</a>
+        </div>
+
+        <div class="login dashboardlink">
+          <a href="/">DASHBOARD</a>
+        </div>
+
+      </div>
+      <div class="clearing"></div>
+    </div>
 
 
-    <% end %>
-  </div>
+
+<% else %>
+
+
+    <div class="headerwrapper">
+      <div class="header">
+        <img src="/images/logoblue.png"
+             onclick="window.location = '/' "
+        />
+
+        <div class="login">
+          <img width="10" height="15" src="/images/lock_icon_gray.png"/>
+          <%= link_to "MERCHANT LOGIN", new_user_session_path %>
+        </div>
+
+        <div class="nav">
+          <a href="/how.html">HOW IT WORKS</a>
+          <%= link_to "SIGN UP", new_user_registration_path %>
+        </div>
+
+      </div>
+      <div class="clearing"></div>
+    </div>
+
+
+
+<% end %>
+</div>
 </nav>
