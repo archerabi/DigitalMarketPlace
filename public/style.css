@@ -584,42 +584,6 @@ div.circle-right{
     font-family: 'ProximaNovaLight', Helvetica, Arial, sans-serif;
 }
 
-
-
-.preloader {
-    /*
-      position: absolute;
-      left: 0;
-      top: -100px;
-      z-index: 0;
-      color: #fff;
-      text-align: center;
-      line-height: 100px;
-      height: 100px;
-      width: 100%;
-      */
-    opacity: 0;
-    font-size: 25px;
-    -webkit-transition: 300ms;
-    -moz-transition: 300ms;
-    -ms-transition: 300ms;
-    -o-transition: 300ms;
-    transition: 300ms;
-
-    display: none;
-    /*
-      background: rgba(0,0,0,0.1);
-      */
-}
-
-.preloader.visible {
-    /*
-  top: 0;
-  */
-    opacity: 1;
-    display: block;
-}
-
 .swiper-container {
 
     /*
@@ -671,3 +635,41 @@ div.circle-right{
 	*/
 }
 
+/* Show purchasing text and loading image as a modal overlaid on top of a darkened screen. */
+
+#modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .50;
+    -webkit-opacity: .5;
+    -moz-opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1000;
+}
+
+#modal-content {
+    text-align: center;
+    color: white;
+    display: none;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    z-index: 1000;
+
+    font-size: 25px;
+    font-weight: bold;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+}
+
+#modal-background.active, #modal-content.active {
+    display: block;
+}
