@@ -10,22 +10,26 @@
 
         <div class="login">
           <%= link_to destroy_user_session_path, :method => 'delete' do %>
-              LOGOUT <%= current_user.email.upcase %>
+              Log Out
           <% end %>
         </div>
 
         <div class="login">
-          <%= link_to "EDIT PROFILE", edit_user_registration_path %>
+          <%= link_to "Edit Profile", edit_user_registration_path %>
         </div>
 
         <div class="login createlistinglink">
-          <a href="/products/new">CREATE LISTING</a>
+          <a href="/products/new">Create Listing</a>
         </div>
 
         <div class="login dashboardlink">
-          <a href="/">DASHBOARD</a>
+          <a href="/dashboard">Dashboard</a>
         </div>
 
+
+         <div class="nav">
+          <a href="/browse">Browse Marketplace</a>
+        </div>
       </div>
       <div class="clearing"></div>
     </div>
@@ -41,14 +45,15 @@
              onclick="window.location = '/' "
         />
 
-        <div class="login">
+        <div class="notlogin">
           <img width="10" height="15" src="/images/lock_icon_gray.png"/>
           <%= link_to "MERCHANT LOGIN", new_user_session_path %>
         </div>
 
         <div class="nav">
-          <a href="/how.html">HOW IT WORKS</a>
-          <%= link_to "SIGN UP", new_user_registration_path %>
+          <a href="/#features">Features</a>
+          <a href="/browse">Browse Marketplace</a>
+          <%= link_to "Create Account", new_user_registration_path %>
         </div>
 
       </div>

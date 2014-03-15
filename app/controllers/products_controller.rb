@@ -8,6 +8,12 @@ class ProductsController < ApplicationController
 		
 	end
 
+	def dashboard
+  
+  	@products = Product.all
+  
+  end
+
 	def create	
 		@product = Product.new(params[:product])
 		@product.user_id = current_user.id

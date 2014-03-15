@@ -1,189 +1,62 @@
-<!-- if logged in -->
-<% if user_signed_in? %>
+<html>
+<head>
+    <title>qwikbit</title>
+    <link href='style.css' rel='stylesheet'/>
+</head>
+<body class="homepage">
+<div class="hero">
+   <%= render 'layouts/navigation' %>
 
-    <body class="dashboardpage">
+    <div class="lead" style="margin-top:-620px;">
+        <p class="tagline">
+            sell your digital content. instantly.
+        </p>
 
-    <%= render 'layouts/navigation' %>
+        <p class="description">
+            Selling your digital content for Bitcoin has never been simpler. Payments are sent directly to your digital wallet, and purchased content is instantly made available to your customers.
+        </p><br/><br/><br/>
 
-    <div class="content">
-
-      <div class="sectionheader">
-
-        <div class="rightside" onclick="window.location = '/products/new' ">
-          <div class="createbutton" id="createlisting">
-            &nbsp;&nbsp;CREATE&nbsp;NEW&nbsp;LISTING&nbsp;&nbsp;
-          </div>
+        <div class="button" onclick="window.location = '/users/sign_up' ">
+            GET STARTED
         </div>
+    </div>
+</div>
+<div class="content" id="features">
 
-        <% if connect_to_coinbase_visible? %>
-            <div class="rightside" onclick="window.location = '<%= link_to_coinbase_auth %>' " style="margin-right: 1em">
-              <div class="createbutton" id="createlisting">
-                &nbsp;&nbsp;CONNECT&nbsp;COINBASE&nbsp;&nbsp;
-              </div>
-            </div>
-        <% end %>
+    <div class="section">
+        <div class="circle-left"> <img src="images/image01.png" /></div>
+        <div class="featuretext">
+            <h1>Zero Fees</h1>
+            We're a little different from most marketplaces who charge to share ideas in the world. At qwikbit, we believe that the very best things in life are free, and that selling your digital goods online is no exception.
 
-        <h2 class="leftside" id="dashboardtitle">CURRENT LISTINGS</h2>
-
-        <br class="clearing"/>
-      </div>
-
-      <div class="section" id="dashcontainer">
-
-        <%= render 'layouts/messages' %>
-
-        <div class="padder" id="dashboardtable">
-          <table>
-
-            <!-- if no products by this user -->
-            <% if current_user.products.nil? or current_user.products.empty? %>
-                <tr>
-                  <th> No products for sale. Add one!</th>
-                </tr>
-
-                <!-- else products by this user -->
-            <% else %>
-                <thead>
-                <tr id="tablehead">
-                  <th>Product Name</th>
-                  <th>Unit Price</th>
-                  <!-- TODO
-                  <th>Sold</th>
-                  <th>Total Sales</th>
-                  -->
-                </tr>
-                </thead>
-                <tbody>
-                <% current_user.products.each do |x| %>
-                    <tr>
-                      <td>
-                        <%= link_to x do %>
-                            <%= x.name %>
-                        <% end %> <!-- end link -->
-                      </td>
-                      <td>BTC <%= x.price %></td>
-
-                      <!--
-                      <td>893</td>
-                      <td>BTC 1.3395</td>
-                      -->
-                    </tr>
-                <% end %> <!-- end each -->
-                </tbody>
-            <% end %> <!-- end else products by this user -->
-
-          </table>
         </div>
-
-        <div class="clearing"></div>
-
-      </div>
-
     </div>
 
-    </body>
 
-    <!-- else not logged in -->
-<% else %>
-
-    <body class="productlistingpage">
-
-    <%= render 'layouts/navigation' %>
-
-    <div class="content">
-
-      <%= render 'layouts/messages' %>
-
-      <!-- if no products -->
-      <% if @products.nil? or @products.empty? %>
-
-          <div class="section">
-            <p> Nothing for sale yet!</p>
-          </div>
-
-      <% else %> <!-- else products uploaded -->
-
-          <!-- TODO style next and disable when no more items
-
-        <div class="section">
-
-          <a class="next-button" href="#">Next</a>
-
-          <a class="buy-button" href="#">Buy</a>
+    <div class="section">
 
 
-            <div class="preloader">
-              Purchasing...
-            </div>
+        <div class="circle-right"><img src="images/image02.png" /> </div>
+        <div class="featuretext">
+            <h1>Instant Delivery</h1>
+            We believe that when customers are happy, you'll be happy too. So when you sell a product, we instantly deliver your content to the customer's inbox so that they can begin enjoying your content, and you can begin spending more time on things that matter.
 
-
-          </div>
-         -->
-
-          <div id="modal-background"></div>
-          <div id="modal-content">
-            Purchasing...<br />
-            <img src="/images/245.GIF" />
-          </div>
-
-          <div class="swiper-container product">
-            <div class="swiper-wrapper" style="margin: 0px; padding: 0px">
-
-              <% @products.each do |x| %>
-
-                  <div class="swiper-slide" style="margin: 0px; padding: 0px">
-
-                    <div class="productImageWrapper"><img class="productImage" src="<%= x.image_url %>" width="100%"/>
-                    </div>
-
-                    <div class="productlisting">
-                      <div class="buycontrols">
-                        <div class="leftimage pricelabel">BTC</div>
-                        <h3 class="leftimage" id="price"><%= x.price %></h3>
-
-                        <div class="rightimage" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
-                          <div class="buybutton">
-                            BUY NOW
-                          </div>
-                        </div>
-
-                      </div>
-                      <div class="productinfo">
-                        <h1 class="producttitle">
-                          <%= x.name %>
-                        </h1>
-
-                        <div class="productdescription">
-                          <%= x.description %>
-                        </div>
-                      </div>
-                      <br/>
-
-                    </div>
-
-                  </div>
-                  <!-- end swiper slide -->
-
-                  <% end %><!-- end each -->
-
-            </div>
-            <!-- end swiper wrapper -->
-
-          </div>
-          <!-- end section -->
-
-          <!-- end else no products uploaded -->
-      <% end %>
-
-
+        </div>
     </div>
-    <!-- end content -->
 
-    <script src="/js/idangerous.swiper-2.1.min.js"></script>
-    <script src="/js/home.js"></script>
 
-    </body>
 
-    <!-- end else not logged in -->
+    <div class="section">
+        <div class="circle-left"> <img src="images/image03.png" /></div>
+        <div class="featuretext">
+            <h1>Powered By Coinbase</h1>
+            We take payment protection seriously, which is why we're backed by the Coinbase API. You enjoy bank level security and immediate payment verification without having to worry about a thing.
 
-<% end %>
+        </div>
+    </div>
+
+
+
+</div>
+
+

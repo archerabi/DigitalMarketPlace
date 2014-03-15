@@ -1,0 +1,105 @@
+<!-- else not logged in -->
+
+    <body class="productlistingpage" style="background-color:#f2f2f2;">
+
+    <%= render 'layouts/navigation' %>
+
+    <div class="content">
+
+      <%= render 'layouts/messages' %>
+
+      <!-- if no products -->
+      <% if @products.nil? or @products.empty? %>
+
+          <div class="section empty">
+            <p> We don't have any products for sale yet. </p><p>Click the button below to create a product listing and sell your digital goods to others. </p> <br/>
+            <a href="/products/new"><div class="button" style="padding-left:40px;padding-right:40px;">
+            SELL SOMETHING</div>
+        </div>
+          </div>
+
+      <% else %> <!-- else products uploaded -->
+
+          <!-- TODO style next and disable when no more items
+
+        <div class="section">
+
+          <a class="next-button" href="#">Next</a>
+
+          <a class="buy-button" href="#">Buy</a>
+
+
+            <div class="preloader">
+              Purchasing...
+            </div>
+
+
+          </div>
+         -->
+
+          <div id="modal-background"></div>
+          <div id="modal-content">
+            Purchasing...<br />
+            <img src="/images/245.GIF" />
+          </div>
+
+          <div class="swiper-container product">
+            <div class="swiper-wrapper" style="margin: 0px; padding: 0px">
+
+              <% @products.each do |x| %>
+
+                  <div class="swiper-slide" style="margin: 0px; padding: 0px">
+
+                    <div class="productImageWrapper"><img class="productImage" src="<%= x.image_url %>" width="100%"/>
+                    </div>
+
+                    <div class="productlisting">
+                      <div class="buycontrols">
+                        <div class="leftimage pricelabel">BTC</div>
+                        <h3 class="leftimage" id="price"><%= x.price %></h3>
+
+                        <div class="rightimage" onclick="window.location = '<%= "#{ENV["DOMAIN_NAME"]}/products/public/#{x.id}" %>' ">
+                          <div class="buybutton">
+                            BUY NOW
+                          </div>
+                        </div>
+
+                      </div>
+                      <div class="productinfo">
+                        <h1 class="producttitle">
+                          <%= x.name %>
+                        </h1>
+
+                        <div class="productdescription">
+                          <%= x.description %>
+                        </div>
+                      </div>
+                      <br/>
+
+                    </div>
+
+                  </div>
+                  <!-- end swiper slide -->
+
+                  <% end %><!-- end each -->
+
+            </div>
+            <!-- end swiper wrapper -->
+
+          </div>
+          <!-- end section -->
+
+          <!-- end else no products uploaded -->
+      <% end %>
+
+
+    </div>
+    <!-- end content -->
+
+    <script src="/js/idangerous.swiper-2.1.min.js"></script>
+    <script src="/js/home.js"></script>
+
+
+
+    <!-- end else not logged in -->
+

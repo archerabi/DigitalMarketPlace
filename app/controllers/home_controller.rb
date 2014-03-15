@@ -4,4 +4,10 @@ class HomeController < ApplicationController
   	@products = Product.all
   
   end
+
+   def browse
+  
+  	@products = Product.all
+  
+  end
 end

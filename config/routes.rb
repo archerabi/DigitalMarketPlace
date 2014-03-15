@@ -21,6 +21,8 @@ DigitalMarketplace::Application.routes.draw do
   get '/orders/:id/download', to: 'orders#download_code'
 
   get '/oauth/coinbase', to: 'coinbase#code'
+    get '/browse', to: 'home#browse'
+    get '/dashboard', to: 'products#dashboard'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
