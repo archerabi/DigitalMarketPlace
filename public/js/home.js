@@ -64,7 +64,7 @@ var mySwiper = new Swiper('.swiper-container', {
             mySwiper.params.onlyExternal = true
 
             //Show loader
-            $("body,#modal-content,#modal-background").toggleClass("active");
+            $("body,#purchasing-modal-content,#purchasing-modal-background").toggleClass("active");
 
             // Click buy link.
             var activeSlide = mySwiper.activeSlide();
@@ -101,5 +101,35 @@ $('.next-button').on('click', function (e) {
     }, 1001);
 
 });
-  
+
+// If we have the guide element on the page, but the user hasn't seen it yet...
+if ( $("#guide-modal-background") && !localStorage.getItem('hasSeenGuide') ) {
+
+    // Show the guide.
+    $("body,#guide-modal-content,#guide-modal-background").toggleClass("active");
+
+    // Remember they've seen it.
+    localStorage.setItem('hasSeenGuide','true');
+
+    // Hide it after 3 seconds.
+    setTimeout(function(){
+
+        $("body,#guide-modal-content,#guide-modal-background").removeClass("active");
+
+    },3000);
+
+    /* Attempt to hide on click/touch, but was stopping first click/touch from getting to page.
+    document.body.onmousedown = function(e) {
+        $("body,#guide-modal-content,#guide-modal-background").removeClass("active");
+
+        evt = e || window.event;
+        var target = document.elementFromPoint(evt.clientX, evt.clientY);
+        target.onmousedown(e);
+    }
+
+    document.body.touchstart = function(e) {
+        $("body,#guide-modal-content,#guide-modal-background").removeClass("active");
+    }
+    */
+}
   

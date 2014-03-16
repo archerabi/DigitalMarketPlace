@@ -679,7 +679,7 @@ div.circle-right{
 
 /* Show purchasing text and loading image as a modal overlaid on top of a darkened screen. */
 
-#modal-background {
+.modal-background {
     display: none;
     position: fixed;
     top: 0;
@@ -692,9 +692,10 @@ div.circle-right{
     -moz-opacity: .5;
     filter: alpha(opacity=50);
     z-index: 1000;
+    pointer-events:none;
 }
 
-#modal-content {
+.modal-content {
     text-align: center;
     color: white;
     display: none;
@@ -710,9 +711,10 @@ div.circle-right{
     -ms-transition: 300ms;
     -o-transition: 300ms;
     transition: 300ms;
+    pointer-events:none;
 }
 
-#modal-background.active, #modal-content.active {
+.modal-background.active, .modal-content.active {
     display: block;
 }
 
