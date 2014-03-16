@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 		coinbase = CoinbaseApi.new user
 		begin
 			response = coinbase.create_order(product.name, product.price, 'USD')
-			order = Order.new product: product.id
+			order = Order.new product: product.id, created_on: Time.now
 			order.coinbase_id = response.parsed['order']['id']
 			order.address = response.parsed['order']['receive_address']
 			order.cookie = cookies['_DigitalMarketplace_session']
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
 		response = Net::HTTP.get(URI("http://blockchain.info/address/#{order.address}?format=json"))
 		response = JSON.load(response)
 		product = Product.find order.product_id
-		if order.btc_price.to_f <= response['final_balance'].to_f
+		if order.btc_price.to_f <= response['final_balance'].to_f / 100000000
 			order.paid = true
 			order.save
 		end

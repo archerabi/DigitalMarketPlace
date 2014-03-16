@@ -4,24 +4,27 @@ var pollId;
 var timerId;
 var orderId;
 var time ;
+var check_balance_internal_seconds = 10;
+var wallet_expire_time_minutes = 10;
 
 function createOrder(product_id)
 {
-	
+
+    $('#buyButton').hide();
+    $("#send-address").text("Creating destination address with CoinBase. Please wait...");
+
 	$.post("/orders",{ product_id : product_id},
 	    function(data) {
-	       $("#buy-widget-container").append("<div><label id=\"buy-widget-root\"/>");
-		   $("#buy-widget-root").append("<div><label id=\"timer\"/></div><div id = \"send-address\"></div>");
-		   $("#buy-widget-root").append("<div><label id=\"price\"/>");
-	       $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address+" .</p>");
-	       $("#price").append("<p>"+data.order.btc_price+" BTC </p>");
-	       $("#buy-button").hide();
+	       $("#send-address").append("<p> Send "+ data.order.btc_price +" BTC to " + data.order.receive_address + " .</p>");
 	       orderId = data.order.id;
-	       time = 10 * 60 * 1000;
-	       pollId = setInterval(pollOrder, 10000); // one hour check.
+	       time = wallet_expire_time_minutes * 60 * 1000;
+	       pollId = setInterval(pollOrder, check_balance_internal_seconds * 1000); // 10 second check.
 	       timerId = setInterval(timer,1000);
 	    }
-	);
+	).fail(function () {
+                $("#send-address").text("Error contacting CoinBase...");
+                $('#buyButton').show();
+    });;
 }
 
 function timer()
@@ -31,11 +34,15 @@ function timer()
 	if( time <= 0)
 	{
 		removePayWidget();
-		$("#buy-button").show();
+		$("#buyButton").show();
 		return;
 	}
 	var minutes = Math.floor(time / (1000 * 60) );
 	var seconds = Math.floor( (time/1000) % 60) ;
+	if ( seconds < 10)
+	{
+		seconds = '0'+ seconds;
+	}
 	$('#timer').text(minutes+':'+seconds);
 }
 
@@ -57,14 +64,15 @@ function getDownloadCode()
 		{
 			var code = data.code;
 			var path = window.location.origin+'/products/download/'+code;
-			$("#buy-widget-container").append("<a href='"+path+"'> Download </a>");
+			$("#downloadLink").append("<a href='"+path+"'> Download </a>");
 		}
 	});
 }
 
 function removePayWidget()
 {
-	$('#buy-widget-root').remove();
+	$('#send-address').text('');
+	$('#timer').hide();
 	clearInterval(pollId);  
 	clearInterval(timerId);
 }

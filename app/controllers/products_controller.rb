@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
 		rescue
 			return render_404
 		end
-		if @order.nil?
+		if order.nil?
 			return render_404
 		end
 		if order.paid and order.cookie == cookies['_DigitalMarketplace_session']

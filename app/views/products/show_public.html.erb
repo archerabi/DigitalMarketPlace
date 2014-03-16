@@ -1,20 +1,4 @@
-<script>
-    function createOrder(product_id) {
-        $('#buyButton').hide();
-        $("#send-address").text("Creating destination address with CoinBase. Please wait...");
 
-        $.post(
-                "/orders",
-                {product_id: product_id},
-                function (data) {
-                    $("#send-address").append("<p> Send bitcoin to " + data.order.receive_address + " .</p>");
-                }
-        ).fail(function () {
-                    $("#send-address").text("Error contacting CoinBase...");
-                    $('#buyButton').show();
-                });
-    }
-</script>
 
 <body class="productlistingpage">
 
@@ -30,7 +14,7 @@
 
     <div class="productlisting">
       <div class="buycontrols">
-        <div class="leftimage pricelabel">BTC</div>
+        <div class="leftimage pricelabel">USD</div>
         <h3 class="leftimage" id="price"><%= @product.price %></h3>
       </div>
       <div class="productinfo">
@@ -45,7 +29,7 @@
         <div style="clear:both">&nbsp;</div>
 
         <div class="rightimage" onclick="createOrder('<%= @product.id %>')">
-          <div class="buybutton">
+          <div class="buybutton" id ="buyButton">
             CHECKOUT
           </div>
         </div>
@@ -54,7 +38,10 @@
 
         <div id="send-address">
         </div>
-
+        <div id="timer">
+        </div>
+        <div id="downloadLink">
+        </div>
       </div>
       <br/>
 

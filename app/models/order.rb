@@ -8,4 +8,5 @@ class Order
   field :download_code, type:String
   field :paid, type: Boolean, default: false
   field :btc_price, type: Float
+  field :created_on, type: DateTime
 end
