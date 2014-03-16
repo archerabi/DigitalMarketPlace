@@ -15,7 +15,8 @@ function createOrder(product_id)
 
 	$.post("/orders",{ product_id : product_id},
 	    function(data) {
-	       $("#send-address").text("<p> Please don't refresh the page until you finish checkout</p><p> Send "+ data.order.btc_price +" BTC to " + data.order.receive_address + " .</p>");
+	    	$("#send-address").text('');
+	       $("#send-address").append("<p> Please don't refresh the page until you finish checkout</p><p> Send "+ data.order.btc_price +" BTC to " + data.order.receive_address + " .</p>");
 	       orderId = data.order.id;
 	       time = wallet_expire_time_minutes * 60 * 1000;
 	       pollId = setInterval(pollOrder, check_balance_internal_seconds * 1000); // 10 second check.
